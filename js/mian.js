@@ -1,21 +1,17 @@
-// btn to up
+let plus = document.querySelector(".plus"),
+    num = document.querySelector(".num"),
+    minus = document.querySelector(".minus");
 
-let btn = document.querySelector('.btn-up')
-let header = document.querySelector('header')
+    let cont = 1;
 
-// show btn
-window.onscroll = function () {
-    if (window.scrollY >= 200) {
-        btn.style.display = 'block'
-    } else {
-        btn.style.display = 'none'
-    }
-}
+    plus.addEventListener("click", ()=> {
+       cont++
+       cont = (cont < 10) ? "0" + cont : cont;
+       num.innerHTML = cont
+     });
 
-// move to up 
-btn.onclick = function () {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    })
-}
+    minus.addEventListener("click", ()=> {
+        cont--
+        cont = (cont < 10) ? "0" + cont : cont;
+        num.innerHTML = cont
+      });
